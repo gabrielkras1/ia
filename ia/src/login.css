@@ -1,27 +1,48 @@
 :root {
-  --primary: #005EFF;
-  --background: #f4f6fc;
+  --primary: #005eff;
+  --secondary: #ff3366;
   --white: #fff;
   --text: #1e1e2f;
   --gray: #777;
   --error: #e63946;
   --radius: 10px;
-  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-body, html, .app {
+body, html {
   height: 100%;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: var(--background);
+  font-family: "Poppins", sans-serif;
   color: var(--text);
+  overflow: hidden;
+}
+
+/* Fundo com fade */
+.login-page {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(135deg, #005eff 0%, #4e00c2 50%, #ff3366 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fade-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.15), rgba(255,255,255,0.05));
+  z-index: 0;
 }
 
 .login-container {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 .login-card {
@@ -31,16 +52,23 @@ body, html, .app {
   box-shadow: var(--shadow);
   width: 380px;
   text-align: center;
+  animation: fadeIn 0.8s ease;
 }
 
-.login-header img {
-  width: 90px;
-  margin-bottom: 1rem;
+.login-logo {
+  display: block;
+  margin: 0 auto 1rem auto; /* centraliza horizontalmente e dá espaçamento abaixo */
+  width: 120px; /* tamanho fixo */
+  height: auto; /* mantém proporção */
 }
 
 .login-header h1 {
-  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 0.25rem;
+  background: linear-gradient(90deg, #005eff, #4e00c2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .login-header p {
@@ -95,19 +123,13 @@ input:focus {
   font-size: 0.9rem;
 }
 
-.checkbox-container {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
 .forgot-password {
   color: var(--primary);
   text-decoration: none;
 }
 
 .login-button {
-  background: var(--primary);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   color: var(--white);
   border: none;
   border-radius: var(--radius);
@@ -120,7 +142,8 @@ input:focus {
 }
 
 .login-button:hover {
-  background: #0046cc;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .login-footer {
@@ -134,4 +157,9 @@ input:focus {
   color: var(--primary);
   font-weight: 600;
   cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

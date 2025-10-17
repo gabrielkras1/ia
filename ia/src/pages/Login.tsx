@@ -1,5 +1,4 @@
-// src/pages/login.tsx
-
+// src/pages/Login.tsx
 import { useState, ChangeEvent, FormEvent } from "react";
 import "../login.css";
 
@@ -26,21 +25,16 @@ export default function Login() {
   const validateForm = () => {
     const newErrors: Errors = {};
 
-    if (!formData.email) {
-      newErrors.email = "Email é obrigatório";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    if (!formData.email) newErrors.email = "Email é obrigatório";
+    else if (!/\S+@\S+\.\S+/.test(formData.email))
       newErrors.email = "Email inválido";
-    }
 
-    if (!formData.senha) {
-      newErrors.senha = "Senha é obrigatória";
-    } else if (formData.senha.length < 6) {
+    if (!formData.senha) newErrors.senha = "Senha é obrigatória";
+    else if (formData.senha.length < 6)
       newErrors.senha = "Senha deve ter pelo menos 6 caracteres";
-    }
 
-    if (!isLogin && !formData.nome) {
+    if (!isLogin && !formData.nome)
       newErrors.nome = "Nome é obrigatório";
-    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -60,16 +54,18 @@ export default function Login() {
   };
 
   return (
-    <div className="app">
+    <div className="login-page">
+      <div className="fade-overlay"></div>
       <div className="login-container">
         <div className="login-card">
           <div className="login-header">
+            <img
+              src="/images/full-fade-logo.png"
+              alt="Logo da escola"
+              className="login-logo"
+            />
             <h1>{isLogin ? "Login" : "Criar Conta"}</h1>
-            <p>
-              {isLogin
-                ? "Acesse sua conta para continuar"
-                : "Crie sua conta para começar"}
-            </p>
+            <p>{isLogin ? "Acesse sua conta para continuar" : "Crie sua conta para começar"}</p>
           </div>
 
           <form onSubmit={handleSubmit} className="login-form">
@@ -85,9 +81,7 @@ export default function Login() {
                   className={errors.nome ? "error" : ""}
                   placeholder="Digite seu nome completo"
                 />
-                {errors.nome && (
-                  <span className="error-message">{errors.nome}</span>
-                )}
+                {errors.nome && <span className="error-message">{errors.nome}</span>}
               </div>
             )}
 
@@ -102,9 +96,7 @@ export default function Login() {
                 className={errors.email ? "error" : ""}
                 placeholder="seu@email.com"
               />
-              {errors.email && (
-                <span className="error-message">{errors.email}</span>
-              )}
+              {errors.email && <span className="error-message">{errors.email}</span>}
             </div>
 
             <div className="form-group">
@@ -118,9 +110,7 @@ export default function Login() {
                 className={errors.senha ? "error" : ""}
                 placeholder="Digite sua senha"
               />
-              {errors.senha && (
-                <span className="error-message">{errors.senha}</span>
-              )}
+              {errors.senha && <span className="error-message">{errors.senha}</span>}
             </div>
 
             {isLogin && (
@@ -133,11 +123,10 @@ export default function Login() {
                     onChange={handleChange}
                   />
                   <span className="checkmark"></span>
-                  Lembrar-me  
+                  Lembrar-me
                 </label>
                 <a href="#recuperar" className="forgot-password">
-                  {" "}
-                    Esqueci minha senha
+                  Esqueci minha senha
                 </a>
               </div>
             )}
@@ -150,11 +139,7 @@ export default function Login() {
           <div className="login-footer">
             <p>
               {isLogin ? "Não tem uma conta?" : "Já tem uma conta?"}
-              <button
-                type="button"
-                className="toggle-form"
-                onClick={toggleFormMode}
-              >
+              <button type="button" className="toggle-form" onClick={toggleFormMode}>
                 {isLogin ? " Criar conta" : " Fazer login"}
               </button>
             </p>
