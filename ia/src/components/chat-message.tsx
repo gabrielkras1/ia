@@ -20,13 +20,7 @@ export function ChatMessage({ message }: ChatMessageProps) {
       "flex gap-3 mb-6",
       !isAI && "flex-row-reverse"
     )}>
-      <Avatar className="h-8 w-8 flex-shrink-0">
-        <AvatarFallback className={cn(
-          isAI ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground"
-        )}>
-          {isAI ? <Bot className="h-4 w-4" /> : <User className="h-4 w-4" />}
-        </AvatarFallback>
-      </Avatar>
+     <img src={isAI ? "/images/blue-fade-logo.svg" : "/images/blue-simple-logo.svg"} alt="Avatar" className="h-12 w-12 rounded-full flex-shrink-0" />
 
       <div className={cn(
         "flex flex-col max-w-[80%]",
@@ -36,7 +30,7 @@ export function ChatMessage({ message }: ChatMessageProps) {
           "mb-1 text-xs text-muted-foreground",
           !isAI && "text-right"
         )}>
-          {isAI ? "AssistentIA" : "Você"} • {message.timestamp}
+          {isAI ? "InflyIA" : "Você"} • {message.timestamp}
         </div>
         
         <Card className={cn(

@@ -17,7 +17,7 @@ interface ChatAreaProps {
 
 const welcomeMessage: Message = {
   id: "welcome",
-  content: "Olá! Sou sua AssistentIA Empresarial. Estou aqui para ajudar com análises, relatórios, estratégias e muito mais. Como posso auxiliá-lo hoje?",
+  content: "Olá! Sou sua InflyIA Empresarial. Estou aqui para ajudar com análises, relatórios, estratégias e muito mais. Como posso auxiliá-lo hoje?",
   sender: "ai",
   timestamp: "Agora"
 };
@@ -27,12 +27,12 @@ export function ChatArea({ messages, isLoading }: ChatAreaProps) {
 
   return (
     <div className="flex-1 flex flex-col">
-      <ScrollArea className="flex-1 p-4">
+      <ScrollArea className="flex-1 p-4 chat-gradient">
         <div className="max-w-4xl mx-auto">
           {allMessages.map((message) => (
             <ChatMessage key={message.id} message={message} />
           ))}
-          
+
           {isLoading && (
             <div className="flex gap-3 mb-6">
               <div className="h-8 w-8 bg-primary rounded-full flex items-center justify-center">

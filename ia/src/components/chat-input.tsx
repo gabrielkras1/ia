@@ -39,7 +39,7 @@ export function ChatInput({ onSendMessage, disabled }: ChatInputProps) {
             className="min-h-[60px] resize-none pr-12 py-3"
             rows={2}
           />
-          <Button
+          {/* <Button
             type="button"
             variant="ghost"
             size="icon"
@@ -47,7 +47,7 @@ export function ChatInput({ onSendMessage, disabled }: ChatInputProps) {
             disabled={disabled}
           >
             <Paperclip className="h-4 w-4" />
-          </Button>
+          </Button> */}
         </div>
         
         <Button

@@ -34,7 +34,7 @@ export default function Home() {
         <nav>
           <Link to="/">Início</Link>
           <Link to="/perfil">Meu Perfil</Link>
-          <button className="chatbot-btn" onClick={() => window.open('/chatbot', '_blank')}>
+          <button className="chatbot-btn" onClick={() => window.open('/chat', '_blank')}>
             🤖 Chatbot AI
           </button>
         </nav>
@@ -49,7 +49,7 @@ export default function Home() {
             Resumo geral da sua escola - {new Date().toLocaleDateString('pt-BR')}
           </p>
           <div className="hero-actions">
-            <button className="chatbot-hero-btn" onClick={() => window.open('/chatbot', '_blank')}>
+            <button className="chatbot-hero-btn" onClick={() => window.open('/chat', '_blank')}>
               🤖 Conversar com AI Assistant
             </button>
           </div>
@@ -151,7 +151,7 @@ export default function Home() {
                 </ul>
               </div>
               <div className="chatbot-actions">
-                <button className="chatbot-primary-btn" onClick={() => window.open('/chatbot', '_blank')}>
+                <button className="chatbot-primary-btn" onClick={() => window.open('/chat', '_blank')}>
                   🚀 Iniciar Conversa
                 </button>
                 <button className="chatbot-secondary-btn">
@@ -187,7 +187,7 @@ export default function Home() {
       </main>
 
       {/* Chatbot Floating Button */}
-      <button className="floating-chatbot-btn" onClick={() => window.open('/chatbot', '_blank')}>
+      <button className="floating-chatbot-btn" onClick={() => window.open('/chat', '_blank')}>
         🤖
       </button>
 

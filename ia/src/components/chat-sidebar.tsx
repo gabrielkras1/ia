@@ -11,15 +11,11 @@ interface ChatSession {
 
 const mockSessions: ChatSession[] = [
   { id: "1", title: "Análise de dados Q1", timestamp: "Hoje" },
-  { id: "2", title: "Estratégia de marketing", timestamp: "Ontem" },
-  { id: "3", title: "Relatório financeiro", timestamp: "2 dias atrás" },
-  { id: "4", title: "Planejamento de recursos", timestamp: "3 dias atrás" },
-  { id: "5", title: "Otimização de processos", timestamp: "1 semana atrás" },
 ];
 
 export function ChatSidebar() {
   return (
-    <div className="w-64 bg-card border-r border-border flex flex-col h-full">
+    <div className="w-64 chat-sidebar border-r border-border flex flex-col h-full text-white">
       {/* Header */}
       <div className="p-4 border-b border-border">
         <Button className="w-full justify-start gap-2" variant="default">
@@ -61,12 +57,12 @@ export function ChatSidebar() {
       </div>
 
       {/* Footer */}
-      <div className="p-4 border-t border-border">
+      {/* <div className="p-4 border-t border-border">
         <Button variant="ghost" className="w-full justify-start gap-2">
           <Settings className="h-4 w-4" />
           Configurações
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 }
