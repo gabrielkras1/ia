@@ -3,23 +3,22 @@ import "../Home.css";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  // Dados simulados - você pode substituir por dados reais da API
   const stats = {
     financeiro: {
       receitaMensal: "R$ 45.280,00",
       inadimplencia: "8,2%",
-      mensalidadesPagas: "87%"
+      mensalidadesPagas: "87%",
     },
     comercial: {
       novasMatriculas: 24,
       taxaConversao: "35%",
-      leadsAtivos: 156
+      leadsAtivos: 156,
     },
     educacional: {
       totalAlunos: 342,
       taxaFrequencia: "94%",
-      professores: 18
-    }
+      professores: 18,
+    },
   };
 
   return (
@@ -28,7 +27,6 @@ export default function Home() {
       <header className="home-header">
         <div className="header-left">
           <img src="/images/white-logo.png" alt="Infly" className="logo" />
-
           <h1>Tela Inicial</h1>
         </div>
         <nav>
@@ -45,9 +43,7 @@ export default function Home() {
         {/* Hero */}
         <section className="home-hero">
           <h2>Bem-vindo de volta à Infly English School!</h2>
-          <p>
-            Resumo geral da sua escola - {new Date().toLocaleDateString('pt-BR')}
-          </p>
+          <p>Resumo geral da sua escola - {new Date().toLocaleDateString("pt-BR")}</p>
           <div className="hero-actions">
             <button className="chatbot-hero-btn" onClick={() => window.open('/chat', '_blank')}>
               🤖 Conversar com AI Assistant
@@ -76,9 +72,7 @@ export default function Home() {
                 <div className="stat-label">Mensalidades Pagas</div>
               </div>
             </div>
-            <button className="card-action-btn">
-              Ver Relatórios Detalhados
-            </button>
+            <button className="card-action-btn">Ver Relatórios Detalhados</button>
           </div>
 
           <div className="home-card">
@@ -88,7 +82,9 @@ export default function Home() {
             </div>
             <div className="stats-grid">
               <div className="stat-item">
-                <div className="stat-value highlight">+{stats.comercial.novasMatriculas}</div>
+                <div className="stat-value highlight">
+                  +{stats.comercial.novasMatriculas}
+                </div>
                 <div className="stat-label">Novas Matrículas</div>
               </div>
               <div className="stat-item">
@@ -100,9 +96,7 @@ export default function Home() {
                 <div className="stat-label">Leads Ativos</div>
               </div>
             </div>
-            <button className="card-action-btn">
-              Gerenciar Campanhas
-            </button>
+            <button className="card-action-btn">Gerenciar Campanhas</button>
           </div>
 
           <div className="home-card">
@@ -116,7 +110,9 @@ export default function Home() {
                 <div className="stat-label">Total de Alunos</div>
               </div>
               <div className="stat-item">
-                <div className="stat-value success">{stats.educacional.taxaFrequencia}</div>
+                <div className="stat-value success">
+                  {stats.educacional.taxaFrequencia}
+                </div>
                 <div className="stat-label">Taxa de Frequência</div>
               </div>
               <div className="stat-item">
@@ -124,13 +120,11 @@ export default function Home() {
                 <div className="stat-label">Professores</div>
               </div>
             </div>
-            <button className="card-action-btn">
-              Ver Calendário Acadêmico
-            </button>
+            <button className="card-action-btn">Ver Calendário Acadêmico</button>
           </div>
         </section>
 
-        {/* Card do Chatbot */}
+        {/* Chatbot */}
         <section className="chatbot-card-section">
           <div className="chatbot-card">
             <div className="chatbot-card-header">
@@ -154,9 +148,7 @@ export default function Home() {
                 <button className="chatbot-primary-btn" onClick={() => window.open('/chat', '_blank')}>
                   🚀 Iniciar Conversa
                 </button>
-                <button className="chatbot-secondary-btn">
-                  📚 Ver Tutoriais
-                </button>
+                <button className="chatbot-secondary-btn">📚 Ver Tutoriais</button>
               </div>
             </div>
           </div>
@@ -167,20 +159,16 @@ export default function Home() {
           <h3>Ações Rápidas</h3>
           <div className="actions-grid">
             <button className="action-btn">
-              <span className="action-icon">➕</span>
-              Nova Matrícula
+              <span className="action-icon">➕</span> Nova Matrícula
             </button>
             <button className="action-btn">
-              <span className="action-icon">📊</span>
-              Gerar Relatório
+              <span className="action-icon">📊</span> Gerar Relatório
             </button>
             <button className="action-btn">
-              <span className="action-icon">📅</span>
-              Agendar Aula
+              <span className="action-icon">📅</span> Agendar Aula
             </button>
             <button className="action-btn">
-              <span className="action-icon">💬</span>
-              Enviar Comunicado
+              <span className="action-icon">💬</span> Enviar Comunicado
             </button>
           </div>
         </section>
@@ -193,8 +181,7 @@ export default function Home() {
 
       {/* Rodapé */}
       <footer className="home-footer">
-        © {new Date().getFullYear()} Infly English School - Todos os direitos
-        reservados.
+        © {new Date().getFullYear()} Infly English School - Todos os direitos reservados.
       </footer>
     </div>
   );

@@ -1,6 +1,5 @@
 :root {
-  --primary: #005EFF;
-  --background: #f4f6fc;
+  --primary: #005eff;
   --white: #fff;
   --text: #1e1e2f;
   --gray: #777;
@@ -10,34 +9,55 @@
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+<<<<<<< HEAD
 body{
   overflow-y: auto; 
+=======
+/* ---- Base + Gradiente e Scroll ---- */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: auto;
+>>>>>>> b28ff9592eb227e6ae69fd50d5e71cc1a48e9681
 }
 
 .home-container {
-  background: var(--background);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(135deg, #005eff 0%, #4e00c2 50%, #ff3366 100%);
+  background-attachment: fixed;
+  color: var(--text);
 }
 
+/* ---- Cabeçalho ---- */
 .home-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--primary);
+  background: transparent;
   color: var(--white);
-  padding: 1rem 2rem;
+  padding: 1.5rem 2.5rem;
+  position: relative;
+  z-index: 10;
 }
 
 .home-header .header-left {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .home-header .logo {
   width: 100px;
+}
+
+.home-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #fff, #aad4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .home-header nav a,
@@ -57,37 +77,52 @@ body{
   text-decoration: underline;
 }
 
+/* ---- Conteúdo ---- */
 .home-main {
-  padding: 2rem;
-  flex: 1;
+  flex: 1 1 auto;
+  padding: 3rem 2rem;
 }
 
-.home-hero {
+.home-hero,
+.home-card,
+.quick-actions,
+.chatbot-card {
   background: var(--white);
-  padding: 2rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  text-align: center;
   margin-bottom: 2rem;
+  position: relative;
+  z-index: 5;
+}
+
+/* ---- Hero ---- */
+.home-hero {
+  text-align: center;
+  padding: 2rem;
 }
 
 .home-hero h2 {
   color: var(--primary);
+  font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
 
+.chatbot-hero-btn {
+  margin-top: 1rem;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ---- Cards ---- */
 .home-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.home-card {
-  background: var(--white);
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
 }
 
 .card-header {
@@ -109,9 +144,6 @@ body{
   grid-template-columns: repeat(3, 1fr);
   margin-top: 1rem;
   gap: 1rem;
-}
-
-.stat-item {
   text-align: center;
 }
 
@@ -145,10 +177,8 @@ body{
   font-weight: 600;
 }
 
+/* ---- Chatbot Card ---- */
 .chatbot-card {
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
   padding: 1.5rem;
 }
 
@@ -163,7 +193,7 @@ body{
 }
 
 .chatbot-secondary-btn {
-  background: var(--background);
+  background: transparent;
   border: 1.5px solid var(--primary);
   color: var(--primary);
   padding: 0.7rem 1.2rem;
@@ -172,11 +202,9 @@ body{
   cursor: pointer;
 }
 
+/* ---- Ações Rápidas ---- */
 .quick-actions {
-  background: var(--white);
   padding: 1.5rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
 }
 
 .actions-grid {
@@ -201,6 +229,7 @@ body{
   background: #0046cc;
 }
 
+/* ---- Botão flutuante ---- */
 .floating-chatbot-btn {
   position: fixed;
   bottom: 1.8rem;
@@ -216,9 +245,11 @@ body{
   cursor: pointer;
 }
 
+/* ---- Rodapé ---- */
 .home-footer {
-  background: var(--primary);
+  background: rgba(0, 0, 0, 0.15);
   color: var(--white);
   text-align: center;
-  padding: 0.8rem;
+  padding: 1rem;
+  font-size: 0.9rem;
 }
