@@ -9,16 +9,8 @@
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-<<<<<<< HEAD
 body{
   overflow-y: auto; 
-=======
-/* ---- Base + Gradiente e Scroll ---- */
-html, body {
-  height: 100%;
-  margin: 0;
-  overflow: auto;
->>>>>>> b28ff9592eb227e6ae69fd50d5e71cc1a48e9681
 }
 
 .home-container {
